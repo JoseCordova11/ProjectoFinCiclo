@@ -1,0 +1,35 @@
+Proceso ProyectoFinCiclo_Ej3
+//Construir una funcion que reciba como parametro un entero y retome ese elemento de la serie de Fibonacci.
+	
+	Definir n, i Como Entero
+	Escribir "Ingrese la posicion que desea mostrar de la serie fibonacci"
+	Leer n
+	
+        //llamamos a la funcion 
+	Escribir fibonacci(n)
+
+	
+FinProceso
+
+
+SubProceso res <- fibonacci(n)
+	//Proceso para determinar la posicion dentro de fibonacci
+	Si (n > 1) Entonces
+		res = fibonacci(n-1) + fibonacci(n-2)
+	FinSi
+	
+	Si (n == 1) Entonces
+		res =  1
+		FinSi
+	
+	Si (n == 0) Entonces
+				res =  0
+	FinSi
+			
+	Si n < 0 Entonces
+		
+		Escribir "Debes ingresar una posicion mayor a 0"
+		
+	FinSi
+	
+FinSubProceso

@@ -1,0 +1,31 @@
+ProyectoFinCiclo Ej3
+//Construir una funcion que reciba como parametro un entero y retome ese elemento de la serie de Fibonacci.
+
+Inicio
+	//Declaracion de variables
+	num, i[0-n]
+
+	<<"Ingrese la posicion que desea mostrar de la serie fiboacci"
+	>>num
+
+	fibonacci(num)
+Fin	
+
+Fibonacci
+	Si (n>1) entonces
+		retornar fibonacci(n-1) + fibonacci(n-2)
+		
+		Sino 
+			Si (n == 1) entonces
+				retornar 1 	
+
+		Sino 
+			Si (n == 0)	entonces
+				retornar 0
+
+	Sino 
+		<<"Debes ingresar una posicion mayor o igual a 1"		
+
+	Fin_Si	
+
+Fin_Fibonacci		

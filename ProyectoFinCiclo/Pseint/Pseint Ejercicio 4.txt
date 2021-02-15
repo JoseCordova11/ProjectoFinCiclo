@@ -1,0 +1,31 @@
+Proceso ProjectoFinCiclo_Ej4
+//Escriba un algoritmo que indique si dos vectores de enteros son “circularmente iguales”, 
+//que significa tener los mismos elementos y en el mismo orden relativo circularmente.	
+	
+	Escribir "Algoritmo que indique si 2 vectores son Circularmente iguales"
+	//Declaracion de variable
+	n = 4
+	
+	//Se crean los vectores
+	Escribir "Ingrese los valores del vector A"
+	Dimension A(n)
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Leer A(i)
+	Fin Para
+	
+	Escribir "Ingrese los valores del vector B"
+	Dimension B(n)
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Leer B(i)
+	Fin Para
+	
+	//Se verifica si son circularmente iguales
+	Si A(1)==B(3) y A(2)==B(4) y A(3)==B(1) y A(4)==B(2) Entonces
+		Escribir "Son circularmente iguales"
+	SiNo
+		Escribir "No son circularmente iguales"
+	FinSi
+
+FinProceso
+
+	

@@ -1,0 +1,87 @@
+Proceso  ProyectoFinCiclo_Ej2
+//Leer dos matrices de 5x5 enteras y determinar si el promedio entero de los numeros primos
+//de una matriz se encuentra almacenado en la otra matriz
+	
+	//Declaracion de variables
+	n = 5; 
+	//Se crean las matrices
+	Dimension A(n,n)
+	Dimension B(n,n)
+	
+	Imprimir "Ingrese los elementos de la Primera matriz"
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Para j = 1 Hasta n Con Paso 1 Hacer
+			Leer A(i,j)
+		FinPara		
+	FinPara
+	
+	Imprimir "Ingrese los elementos de la Segunda matriz"
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Para j = 1 Hasta n Con Paso 1 Hacer
+			Leer B(i,j)
+		FinPara		
+	FinPara
+	
+	//Se verifica si los numeros son primos 
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Para j = 1 Hasta n Con Paso 1 Hacer
+			d = 2
+			
+			Mientras (A(i,j) mod d <> 0) y (A(i,j) > d) Hacer
+				d = d + 1
+				SI A(i,j) <= d Entonces
+					suma1 = suma1 + A(i,j)
+					cp1 = cp1 + 1
+				FinSi
+				
+			Fin Mientras
+		FinPara		
+	FinPara
+	
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Para j = 1 Hasta n Con Paso 1 Hacer
+			d = 2
+			
+			Mientras (B(i,j) mod d <> 0) y (B(i,j) > d) Hacer
+				d = d + 1
+				SI B(i,j) <= d Entonces
+					suma2 = suma2 + B(i,j)
+					cp2 = cp2 + 1
+				FinSi
+				
+			Fin Mientras
+		FinPara		
+	FinPara
+		
+	Imprimir "La primera matriz es: "
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Para j = 1 Hasta n Con Paso 1 Hacer
+			Imprimir A(i,j), " " Sin Saltar
+		FinPara
+		Imprimir " "
+	FinPara
+	
+	Imprimir "La segunda matriz es: "
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Para j = 1 Hasta n Con Paso 1 Hacer
+			Imprimir B(i,j), " " Sin Saltar
+		FinPara
+		Imprimir " "
+	FinPara
+	
+	//Se calcula el promedio
+	pro1 = suma1 / cp1
+	pro2 = suma2 / cp2
+	
+	Imprimir "El promedio de la primera matriz es: ",pro1
+	Imprimir "El promedio de la primera matriz es: ",pro2
+	
+	Si pro1 == pro2 Entonces
+		Imprimir "Sus promedios son iguales"
+	SiNo
+		Imprimir "No son promedios iguales"
+	FinSi
+	
+	
+FinProceso
+

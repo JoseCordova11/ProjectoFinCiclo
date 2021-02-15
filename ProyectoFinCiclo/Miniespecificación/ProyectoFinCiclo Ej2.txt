@@ -1,0 +1,89 @@
+ProyectoFinCiclo Ej2
+//Leer dos matrices de 5x5 enteras y determinar si el promedio entero de los numeros primos de una matriz se encuentra almacenados en la otra matriz
+
+Inicio
+	//Declaracion de variables
+	n->5, d, cp1, cp2, pro1, pro2, suma1, suma2, i[0-n]
+	i, j, i[0-n]
+
+	//Se crean las matrices
+	A[n][n], i[0-n]
+	B[n][n], i[0-n]
+
+	<<"Ingrese los elementos de la primera matriz"
+	Para (i -> 0, i < n, i++) Hacer
+		Para (j -> 0, j < n, j++) Hacer
+			>>A[i][j]
+		Fin_Para
+	Fin_Para		
+
+	<<"Ingrese los elementos de la segunda matriz"
+	Para (i -> 0, i < n, i++) Hacer
+		Para (j -> 0, j < n, j++) Hacer
+			>>B[i][j]
+		Fin_Para	
+	Fin_Para	
+
+	//Se verifican los números primos
+	Para (i -> 0, i < n, i++) Hacer
+		Para (j -> 0, j < n, j++) Hacer
+			d -> 2	
+
+			Mientras ((A[i][j] % d != 0) && (A[i][j] > d)) Hacer
+                		d -> d + 1;
+                
+                	Si (A[i][j] <= d) entonces
+                    	suma1 -> suma1 + A[i][j];
+                    	cp1++;
+                
+                Fin_Si     				 
+            Fin_Mientras
+        Fin_Para    
+    Fin_Para    
+                
+    Para (i -> 0, i < n, i++) Hacer
+		Para (j -> 0, j < n, j++) Hacer
+			d -> 2	
+			
+			Mientras ((B[i][j] % d != 0) && (B[i][j] > d)) Hacer
+            			d -> d + 1;
+                
+            		Si (B[i][j] <= d) entonces
+                		suma2 -> suma2 + B[i][j];
+                		cp2++;
+
+            	Fin_Si
+            Fin_Mientras
+        Fin_Para
+    Fin_Para            
+
+    //Se presentan las matrices
+    <<"La primera matriz es: "
+    Para (i -> 0, i < n, i++) Hacer
+		Para (j -> 0, j < n, j++) Hacer
+			<<A[i][j], +" "
+        Fin_Para
+        <<" "
+    Fin_Para            
+
+    <<"La segunda matriz es: "
+    Para (i -> 0, i < n, i++) Hacer
+		Para (j -> 0, j < n, j++) Hacer
+			<<B[i][j], +" "
+        Fin_Para
+        <<" "
+    Fin_Para
+
+    //Se calcula el promedio
+    pro1 = suma1 / cp1
+    pro2 = suma2 / cp2
+
+    <<"El promedio de la primera matriz es: ",+pro1
+    <<"El promedio de la segunda matriz es: ",+pro2
+
+    Si (pro1 == pro2) entonces
+    	<<"Sus promedios son iguales"
+    	Sino
+    		<<"No son promedios iguales"
+    Fin_Si	
+Fin	 

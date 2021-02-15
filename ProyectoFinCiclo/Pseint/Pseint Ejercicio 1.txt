@@ -1,0 +1,39 @@
+Proceso  ProyectoFinCiclo_Ej1
+//Leer n numeros enteros, almacenados en un vector y calcularle el factorial
+//a cada uno de los numeros leidos almacenadolos en otro vector
+
+	Escribir "Ingrese el tamaño del vector"
+	Leer n
+	
+	Escribir "Ingrese los valores del vector"
+	//Se crean los vectores
+	Dimension A(n)
+	Dimension B(n)
+	
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		Leer A(i)
+		B(i) = A(i)
+	Fin Para
+	
+	//Se presenta la matriz
+	Para i = 1 Hasta n con paso 1 Hacer
+		Imprimir "A[",i,"] = ",A(i)
+	FinPara
+	
+	//Se calcula el factorial de los números ingresados
+	Para i = 1 Hasta n Con Paso 1 Hacer
+		factorial = 1 
+		Para j = 1 Hasta A(i) Con Paso 1 Hacer
+			factorial = factorial * j
+		FinPara
+		//Se muetsra el faltorial en otro vector
+		Imprimir "B[",i,"] -> ",B(i), "! = ", factorial	
+	FinPara
+	
+FinProceso	
+	
+	
+	
+	
+
+
